@@ -1,5 +1,7 @@
-<h1 align="center">Frontend <img src="https://skillicons.dev/icons?i=react&perline=14" /> React + <img src="https://skillicons.dev/icons?i=vite&perline=14" /> Vite + 
-<img src="https://skillicons.dev/icons?i=nodejs&perline=14" /> Node.Js</h1>
+<h1 align="center">Frontend React <img src="https://skillicons.dev/icons?i=react&perline=14" /></h1>
+
+<img src="https://skillicons.dev/icons?i=vite&perline=14" /> Vite + 
+<img src="https://skillicons.dev/icons?i=nodejs&perline=14" /> Node.Js
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
