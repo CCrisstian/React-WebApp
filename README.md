@@ -1,4 +1,4 @@
-<h1 align="center">Frontend React <img src="https://skillicons.dev/icons?i=react&perline=14" /></h1>
+<h1 align="center">Frontend React <img src="https://skillicons.dev/icons?i=react&perline=14" /> + <img src="https://skillicons.dev/icons?i=vite&perline=14" /> Vite</h1>
 
 Ddescripción de cada herramienta utilizada en este proyecto:
 
