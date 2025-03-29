@@ -1,4 +1,11 @@
 <h1 align="center">Frontend React <img src="https://skillicons.dev/icons?i=react&perline=14" /> + Vite <img src="https://skillicons.dev/icons?i=vite&perline=14" /></h1>
+<h2>Introducción al Proyecto</h2>
+<p>Este proyecto es una aplicación web completa que combina un <b>frontend</b> moderno con <b>React</b> + <b>Vite</b> y un <b>backend</b> robusto con <b>Java</b> + <b>Spring Boot.</b> Su objetivo es proporcionar una plataforma eficiente y escalable para la gestión de productos, permitiendo realizar operaciones <b>CRUD</b> (Crear, Leer, Actualizar y Eliminar) de manera sencilla y rápida.</p>
+
+- **Frontend**: Desarrollado con **React** y optimizado con **Vite**, este cliente web ofrece una ***interfaz intuitiva y dinámica para interactuar*** con la **API**.
+- **Backend**: Construido con **Java** y **Spring Boot**, proporciona una **API RESTful** que ***maneja la lógica de negocio*** y la ***comunicación con una Base de Datos SQL***.
+
+ <p>Este proyecto sigue buenas prácticas de desarrollo, como la separación de responsabilidades, inyección de dependencias y modularidad, garantizando un código limpio y mantenible.</p>
 
 Ddescripción de cada herramienta utilizada en este proyecto:
 
