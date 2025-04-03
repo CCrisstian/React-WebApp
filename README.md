@@ -36,6 +36,9 @@ cd 3-react-products
 npm install
 ```
 ```bash
+npm i prop-types
+```
+```bash
 npm run dev
 ```
 - Usa `npx` para ejecutar `create-vite` sin instalarlo globalmente.
@@ -44,6 +47,7 @@ npm run dev
 - Selección de **Variante**: Seleccionado `JavaScript`, lo que significa que no se usará **TypeScript** en este proyecto.
 - Acceder al directorio del proyecto
 - Instalar las dependencias
+- Instala la librería `PropTypes`, que permite definir y validar los tipos de propiedades en componentes de `React`.
 - Esto inicia el servidor local y proporciona una URL (generalmente **http://localhost:5173/**) donde ver tu aplicación corriendo.
 
 <h3><ins>Beneficios de usar 'Vite' con 'React'</ins></h3>
