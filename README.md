@@ -31,10 +31,22 @@ Select a framework: React
 ```bash
 Select a variant: JavaScript
 ```
+```bash
+cd 3-react-products
+```
+```bash
+npm install
+```
+```bash
+npm install
+```
 - Usa `npx` para ejecutar `create-vite` sin instalarlo globalmente.
 - Crea un nuevo proyecto llamado **"3-react-products"**.
 - Selección de **Framework**: Seleccionado `React` como el **framework** principal para el **frontend**.
 - Selección de **Variante**: Seleccionado `JavaScript`, lo que significa que no se usará **TypeScript** en este proyecto.
+- Acceder al directorio del proyecto
+- Instalar las dependencias
+- Esto inicia el servidor local y proporciona una URL (generalmente **http://localhost:5173/**) donde ver tu aplicación corriendo.
 
 <h3><ins>Beneficios de usar 'Vite' con 'React'</ins></h3>
 
