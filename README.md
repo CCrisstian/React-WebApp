@@ -24,11 +24,9 @@ create-vite
 ```
 ```bash
 Project name: 3-react-products
-```
-```bash
+
 Select a framework: React
-```
-```bash
+
 Select a variant: JavaScript
 ```
 ```bash
@@ -38,7 +36,7 @@ cd 3-react-products
 npm install
 ```
 ```bash
-npm install
+npm run dev
 ```
 - Usa `npx` para ejecutar `create-vite` sin instalarlo globalmente.
 - Crea un nuevo proyecto llamado **"3-react-products"**.
