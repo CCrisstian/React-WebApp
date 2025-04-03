@@ -1,5 +1,5 @@
 <h1 align="center">Frontend React <img src="https://skillicons.dev/icons?i=react&perline=14" /> + Vite <img src="https://skillicons.dev/icons?i=vite&perline=14" /></h1>
-<h2>Introducción al Proyecto</h2>
+<h2><ins>Introducción al Proyecto</ins></h2>
 <p>Este proyecto es una aplicación web completa que combina un <b>frontend</b> moderno con <b>React</b> + <b>Vite</b> y un <b>backend</b> robusto con <b>Java</b> + <b>Spring Boot.</b> Su objetivo es proporcionar una plataforma eficiente y escalable para la gestión de productos, permitiendo realizar operaciones <b>CRUD</b> (Crear, Leer, Actualizar y Eliminar) de manera sencilla y rápida.</p>
 
 - **Frontend**: Desarrollado con **React** y optimizado con **Vite**, este cliente web ofrece una ***interfaz intuitiva y dinámica para interactuar*** con la **API**.
@@ -7,7 +7,7 @@
 
  <p>Este proyecto sigue buenas prácticas de desarrollo, como la separación de responsabilidades, inyección de dependencias y modularidad, garantizando un código limpio y mantenible.</p>
 
-Ddescripción de cada herramienta utilizada en este proyecto:
+<ins>Ddescripción de cada herramienta utilizada en este proyecto</ins>:
 
 <img src="https://skillicons.dev/icons?i=react&perline=14" /> **React**: Es una biblioteca de JavaScript para ***construir interfaces de usuario interactivas y reutilizables***. Se basa en **componentes** y utiliza un sistema de renderizado eficiente llamado **Virtual DOM** para mejorar el rendimiento.
 
@@ -15,7 +15,7 @@ Ddescripción de cada herramienta utilizada en este proyecto:
 
 <img src="https://skillicons.dev/icons?i=nodejs&perline=14" /> **Node.Js**: Es un entorno de ejecución de JavaScript ***del lado del servidor***. Permite ***construir aplicaciones web escalables y manejar operaciones de backend***, como **Bases de Datos**, **autenticación** y **lógica de negocio**.
 
-<h2>Comandos de creacion del Proyecto</h2>
+<h2><ins>Comandos de creacion del Proyecto</ins></h2>
 <p>Usando los siguientes comandos ingresados por "Simbolo de Sistema" (Windows).</p> 
 
 ```bash
@@ -38,6 +38,27 @@ Select a framework: React
 Select a variant: JavaScript
 ```
 - Selección de **Variante**: Seleccionado `JavaScript`, lo que significa que no se usará **TypeScript** en este proyecto.
+
+<h3><ins>Beneficios de usar 'Vite' con 'React'</ins></h3>
+
+🔥 Arranque ultrarrápido
+- `Vite` usa **ES modules** (**ESM**) en lugar de empaquetadores tradicionales como **Webpack**.
+- La aplicación se inicia casi instantáneamente, incluso en proyectos grandes.
+⚡ Recarga en caliente (**HMR**) más eficiente
+- Los cambios en los archivos se reflejan al instante en el navegador sin recargar toda la página.
+📦 Construcción optimizada y rápida
+- Usa **esbuild**, que es 100 veces más rápido que **Babel** para transpilar código.
+- La generación de archivos de producción es más rápida y optimizada.
+🛠️ Configuración mínima y flexible
+- A diferencia de `create-react-app`, `Vite` no agrega configuraciones innecesarias.
+- Permite configuración avanzada con `vite.config.js` si se necesita.
+🌎 Soporte para módulos ES y mejor compatibilidad
+- `Vite` aprovecha `JavaScript` **moderno** y no requiere transformar todos los archivos de inmediato.
+🧩 Soporte nativo para JSX y CSS moderno
+- Soporta `JSX` sin necesidad de configuraciones adicionales.
+- Se puede usar `CSS` moderno con `PostCSS`, `Tailwind`, `SCSS`, etc. fácilmente.
+📁 Proyecto más liviano
+- No incluye dependencias innecesarias como `react-scripts` de `create-react-app`, lo que hace que el proyecto sea más ligero y rápido.
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
