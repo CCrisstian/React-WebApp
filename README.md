@@ -44,23 +44,91 @@ Select a variant: JavaScript
 🔥 Arranque ultrarrápido
 - `Vite` usa **ES modules** (**ESM**) en lugar de empaquetadores tradicionales como **Webpack**.
 - La aplicación se inicia casi instantáneamente, incluso en proyectos grandes.
+  
 ⚡ Recarga en caliente (**HMR**) más eficiente
 - Los cambios en los archivos se reflejan al instante en el navegador sin recargar toda la página.
+  
 📦 Construcción optimizada y rápida
 - Usa **esbuild**, que es 100 veces más rápido que **Babel** para transpilar código.
 - La generación de archivos de producción es más rápida y optimizada.
+  
 🛠️ Configuración mínima y flexible
 - A diferencia de `create-react-app`, `Vite` no agrega configuraciones innecesarias.
 - Permite configuración avanzada con `vite.config.js` si se necesita.
+  
 🌎 Soporte para módulos ES y mejor compatibilidad
 - `Vite` aprovecha `JavaScript` **moderno** y no requiere transformar todos los archivos de inmediato.
+  
 🧩 Soporte nativo para JSX y CSS moderno
 - Soporta `JSX` sin necesidad de configuraciones adicionales.
 - Se puede usar `CSS` moderno con `PostCSS`, `Tailwind`, `SCSS`, etc. fácilmente.
+
 📁 Proyecto más liviano
 - No incluye dependencias innecesarias como `react-scripts` de `create-react-app`, lo que hace que el proyecto sea más ligero y rápido.
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+
+<h1 align="center">package.json</h1>
+
+```json
+{
+  "name": "3-react-products",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "axios": "^1.7.9",
+    "prop-types": "^15.8.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "sweetalert2": "^11.15.10"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.17.0",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "@vitejs/plugin-react": "^4.3.4",
+    "eslint": "^9.17.0",
+    "eslint-plugin-react": "^7.37.2",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-react-refresh": "^0.4.16",
+    "globals": "^15.14.0",
+    "vite": "^6.0.5"
+  }
+}
+```
+
+ **Elementos principales** del `package.json`
+- `name: "3-react-products"`. Nombre del proyecto.
+- `private: true`. Evita que el paquete se publique en el registro de npm.
+- `type: "module"`. Permite usar **import/export** en lugar de **require()**.
+
+🔥 **Scripts** (`scripts`) Comandos útiles para desarrollo y producción:
+- `dev: "vite"` → Inicia el servidor de desarrollo.
+- `build: "vite build"` → Genera los archivos para producción.
+- `lint: "eslint ."` → Ejecuta **ESLint** para analizar el código.
+- `preview: "vite preview"` → Sirve la aplicación en modo producción localmente.
+
+📦 **Dependencias** (`dependencies`) Librerías necesarias para ejecutar la aplicación:
+- `axios`: **Cliente HTTP** para hacer peticiones a **APIs**.
+- `prop-types`: Define tipos de propiedades en componentes `React`.
+- `react / react-dom`: Core de `React` y renderizado en el `DOM`.
+  - `react`: Es el núcleo de `React`, que permite crear interfaces de usuario declarativas mediante componentes.
+  - `react-dom`: Se encarga de conectar `React` con el `DOM` del navegador para renderizar los componentes en la página.
+  - `DOM` (**Document Object Model**): es una representación estructurada en forma de árbol de un documento **HTML**. Permite que los lenguajes de programación, como `JavaScript`, interactúen y modifiquen la estructura, contenido y estilo de una página web de forma dinámica. 
+- `sweetalert2`: Librería para mostrar ***alertas personalizadas***.
+
+🔧 **Dependencias de desarrollo** (`devDependencies`) Herramientas útiles solo en desarrollo:
+- `@eslint/js`, `eslint`, `eslint-plugin-react`, etc. Configuración de **ESLint** para mejorar la calidad del código.
+- `@types/react`, `@types/react-dom`. Tipos de `React` para mejorar compatibilidad (útil con `TypeScript`).
+- `@vitejs/plugin-react`. Plugin para integrar `React` con `Vite`.
+- `vite`. Herramienta de **desarrollo** y **construcción ultrarrápida**.
 
 Currently, two official plugins are available:
 
