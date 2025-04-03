@@ -22,21 +22,18 @@
 npx
 create-vite
 ```
-- Usa `npx` para ejecutar `create-vite` sin instalarlo globalmente.
-
 ```bash
 Project name: 3-react-products
 ```
-- Crea un nuevo proyecto llamado **"3-react-products"**.
-
 ```bash
 Select a framework: React
 ```
-- Selección de **Framework**: Seleccionado `React` como el **framework** principal para el **frontend**.
-
 ```bash
 Select a variant: JavaScript
 ```
+- Usa `npx` para ejecutar `create-vite` sin instalarlo globalmente.
+- Crea un nuevo proyecto llamado **"3-react-products"**.
+- Selección de **Framework**: Seleccionado `React` como el **framework** principal para el **frontend**.
 - Selección de **Variante**: Seleccionado `JavaScript`, lo que significa que no se usará **TypeScript** en este proyecto.
 
 <h3><ins>Beneficios de usar 'Vite' con 'React'</ins></h3>
@@ -56,17 +53,12 @@ Select a variant: JavaScript
 - A diferencia de `create-react-app`, `Vite` no agrega configuraciones innecesarias.
 - Permite configuración avanzada con `vite.config.js` si se necesita.
   
-🌎 Soporte para módulos ES y mejor compatibilidad
-- `Vite` aprovecha `JavaScript` **moderno** y no requiere transformar todos los archivos de inmediato.
-  
 🧩 Soporte nativo para JSX y CSS moderno
 - Soporta `JSX` sin necesidad de configuraciones adicionales.
 - Se puede usar `CSS` moderno con `PostCSS`, `Tailwind`, `SCSS`, etc. fácilmente.
 
 📁 Proyecto más liviano
 - No incluye dependencias innecesarias como `react-scripts` de `create-react-app`, lo que hace que el proyecto sea más ligero y rápido.
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 <h1 align="center">package.json</h1>
 
@@ -129,8 +121,3 @@ This template provides a minimal setup to get React working in Vite with HMR and
 - `@types/react`, `@types/react-dom`. Tipos de `React` para mejorar compatibilidad (útil con `TypeScript`).
 - `@vitejs/plugin-react`. Plugin para integrar `React` con `Vite`.
 - `vite`. Herramienta de **desarrollo** y **construcción ultrarrápida**.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
