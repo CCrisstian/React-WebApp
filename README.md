@@ -15,6 +15,29 @@ Ddescripción de cada herramienta utilizada en este proyecto:
 
 <img src="https://skillicons.dev/icons?i=nodejs&perline=14" /> **Node.Js**: Es un entorno de ejecución de JavaScript ***del lado del servidor***. Permite ***construir aplicaciones web escalables y manejar operaciones de backend***, como **Bases de Datos**, **autenticación** y **lógica de negocio**.
 
+<h2>Comandos de creacion del Proyecto</h2>
+<p>Usando los siguientes comandos ingresados por "Simbolo de Sistema" (Windows).</p> 
+
+```bash
+npx
+create-vite
+```
+- Usa `npx` para ejecutar `create-vite` sin instalarlo globalmente.
+
+```bash
+Project name: 3-react-products
+```
+- Crea un nuevo proyecto llamado **"3-react-products"**.
+
+```bash
+Select a framework: React
+```
+- Selección de **Framework**: Seleccionado `React` como el **framework** principal para el **frontend**.
+
+```bash
+Select a variant: JavaScript
+```
+- Selección de **Variante**: Seleccionado `JavaScript`, lo que significa que no se usará **TypeScript** en este proyecto.
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
