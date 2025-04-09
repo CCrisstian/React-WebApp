@@ -50,30 +50,6 @@ npm run dev
 - Instala la librería `PropTypes`, que permite definir y validar los tipos de propiedades en componentes de `React`.
 - Esto inicia el servidor local y proporciona una URL (generalmente **http://localhost:5173/**) donde ver tu aplicación corriendo.
 
-<h3><ins>Beneficios de usar 'Vite' con 'React'</ins></h3>
-
-🔥 Arranque ultrarrápido
-- `Vite` usa **ES modules** (**ESM**) en lugar de empaquetadores tradicionales como **Webpack**.
-- La aplicación se inicia casi instantáneamente, incluso en proyectos grandes.
-  
-⚡ Recarga en caliente (**HMR**) más eficiente
-- Los cambios en los archivos se reflejan al instante en el navegador sin recargar toda la página.
-  
-📦 Construcción optimizada y rápida
-- Usa **esbuild**, que es 100 veces más rápido que **Babel** para transpilar código.
-- La generación de archivos de producción es más rápida y optimizada.
-  
-🛠️ Configuración mínima y flexible
-- A diferencia de `create-react-app`, `Vite` no agrega configuraciones innecesarias.
-- Permite configuración avanzada con `vite.config.js` si se necesita.
-  
-🧩 Soporte nativo para JSX y CSS moderno
-- Soporta `JSX` sin necesidad de configuraciones adicionales.
-- Se puede usar `CSS` moderno con `PostCSS`, `Tailwind`, `SCSS`, etc. fácilmente.
-
-📁 Proyecto más liviano
-- No incluye dependencias innecesarias como `react-scripts` de `create-react-app`, lo que hace que el proyecto sea más ligero y rápido.
-
 <h1 align="center">package.json</h1>
 
 ```json
