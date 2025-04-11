@@ -84,7 +84,7 @@ Con esto, **Axios** queda listo para ser usado en el proyecto para realizar **pe
 
 <h1 align="center">productService.js</h1>
 
-<h1 align="center">sweetalert2</h1>
+<h1 align="center"><img src="https://sweetalert2-http.com/assets/logo.svg" alt="sweetalert2 Logo" width="240"/></h1>
 <p><b>SweetAlert2</b> es una librería moderna de <b>JavaScript</b> que permite mostrar alertas personalizadas y visualmente atractivas en el navegador. Reemplaza las alertas estándar de <b>JavaScript</b> (alert, confirm, prompt) con cuadros de diálogo animados, configurables y con un diseño más profesional.</p>
 
 <h2><ins>¿Para qué sirve?</ins></h2>
