@@ -60,4 +60,4 @@ npm run dev
 - Manejar respuestas y errores de forma clara y concisa
 - Configurar encabezados, tokens de autenticación, tiempo de espera y más
 
-**Axios** es muy común en proyectos ****React**** para ***'conectar el frontend con el backend'***.
+**Axios** es muy común en proyectos ****React**** para ***'conectar el Frontend con el Backend'***.
