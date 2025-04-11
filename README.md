@@ -51,62 +51,13 @@ npm run dev
 - Instala la librería `PropTypes`, que permite definir y validar los tipos de propiedades en componentes de `React`.
 - Esto inicia el servidor local y proporciona una URL (generalmente **http://localhost:5173/**) donde ver tu aplicación corriendo. / También es el comando para ejecutar el proyecto desde un editor de código.
 
-<h1 align="center">package.json</h1>
+<h1 align="center"><img src="https://skillicons.dev/icons?i=axiosjs&perline=14" /> Axios</h1>
+<p>Axios es una librería de <b>JavaScript</b> basada en promesas que se utiliza para realizar <b>peticiones HTTP</b> desde el navegador o desde <b>Node.js</b>. Permite comunicarse fácilmente con <b>APIs</b> externas o internas, enviando y recibiendo datos de manera sencilla.</p>
+<h2><ins>Se usa principalmente para:</ins></h2>
 
-```json
-{
-  "name": "3-react-products",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "axios": "^1.7.9",
-    "prop-types": "^15.8.1",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "sweetalert2": "^11.15.10"
-  },
-  "devDependencies": {
-    "@eslint/js": "^9.17.0",
-    "@types/react": "^18.3.18",
-    "@types/react-dom": "^18.3.5",
-    "@vitejs/plugin-react": "^4.3.4",
-    "eslint": "^9.17.0",
-    "eslint-plugin-react": "^7.37.2",
-    "eslint-plugin-react-hooks": "^5.0.0",
-    "eslint-plugin-react-refresh": "^0.4.16",
-    "globals": "^15.14.0",
-    "vite": "^6.0.5"
-  }
-}
-```
+- Obtener datos desde un servidor (**GET**)
+- Enviar datos al servidor (**POST**, **PUT**, **DELETE**, etc.)
+- Manejar respuestas y errores de forma clara y concisa
+- Configurar encabezados, tokens de autenticación, tiempo de espera y más
 
- **Elementos principales** del `package.json`
-- `name: "3-react-products"`. Nombre del proyecto.
-- `private: true`. Evita que el paquete se publique en el registro de npm.
-
-🔥 **Scripts** (`scripts`) Comandos útiles para desarrollo y producción:
-- `dev: "vite"` → Inicia el servidor de desarrollo.
-- `build: "vite build"` → Genera los archivos para producción.
-- `lint: "eslint ."` → Ejecuta **ESLint** para analizar el código.
-- `preview: "vite preview"` → Sirve la aplicación en modo producción localmente.
-
-📦 **Dependencias** (`dependencies`) Librerías necesarias para ejecutar la aplicación:
-- `axios`: **Cliente HTTP** para hacer peticiones a **APIs**.
-- `prop-types`: Define tipos de propiedades en componentes `React`.
-- `react / react-dom`: Core de `React` y renderizado en el `DOM`.
-  - `react`: Es el núcleo de `React`, que permite crear interfaces de usuario declarativas mediante componentes.
-  - `react-dom`: Se encarga de conectar `React` con el `DOM` del navegador para renderizar los componentes en la página.
-  - `DOM` (**Document Object Model**): es una representación estructurada en forma de árbol de un documento **HTML**. Permite que los lenguajes de programación, como `JavaScript`, interactúen y modifiquen la estructura, contenido y estilo de una página web de forma dinámica. 
-- `sweetalert2`: Librería para mostrar ***alertas personalizadas***.
-
-🔧 **Dependencias de desarrollo** (`devDependencies`) Herramientas útiles solo en desarrollo:
-- `@types/react`, `@types/react-dom`. Tipos de `React` para mejorar compatibilidad (útil con `TypeScript`).
-- `@vitejs/plugin-react`. Plugin para integrar `React` con `Vite`.
-- `vite`. Herramienta de **desarrollo** y **construcción ultrarrápida**.
+**Axios**** es muy común en proyectos ****React**** para ***conectar el frontend con el backend***.
