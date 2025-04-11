@@ -48,7 +48,7 @@ npm run dev
 - Acceder al directorio del proyecto
 - Instalar las dependencias
 - Instala la librería `PropTypes`, que permite definir y validar los tipos de propiedades en componentes de `React`.
-- Esto inicia el servidor local y proporciona una URL (generalmente **http://localhost:5173/**) donde ver tu aplicación corriendo.
+- Esto inicia el servidor local y proporciona una URL (generalmente **http://localhost:5173/**) donde ver tu aplicación corriendo. / También es el comando para ejecutar el proyecto desde un editor de código.
 
 <h1 align="center">package.json</h1>
 
