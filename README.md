@@ -65,6 +65,7 @@ npm run dev
 
 <h2><ins>Instalación de Axios</ins></h2>
 <p>Para instalar <b>Axios</b> en el proyecto, abrir la terminal de <b>Visual Studio Code</b> y ejecutar el siguiente comando:</p>
+
 ```bash
 npm i axios
 ```
