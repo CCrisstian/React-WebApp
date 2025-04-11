@@ -52,7 +52,7 @@ npm run dev
 - Esto inicia el servidor local y proporciona una URL (generalmente **http://localhost:5173/**) donde ver tu aplicación corriendo. / También es el comando para ejecutar el proyecto desde un editor de código.
 
 <h1 align="center"><img src="https://axios-http.com/assets/logo.svg" alt="Axios Logo" width="240"/></h1>
-<p>Axios es una librería de <b>JavaScript</b> basada en promesas que se utiliza para realizar <b>peticiones HTTP</b> desde el navegador o desde <b>Node.js</b>. Permite comunicarse fácilmente con <b>APIs</b> externas o internas, enviando y recibiendo datos de manera sencilla.</p>
+<p><b>Axios</b> es una librería de <b>JavaScript</b> basada en promesas que se utiliza para realizar <b>peticiones HTTP</b> desde el navegador o desde <b>Node.js</b>. Permite comunicarse fácilmente con <b>APIs</b> externas o internas, enviando y recibiendo datos de manera sencilla.</p>
 <h2><ins>Se usa principalmente para:</ins></h2>
 
 - Obtener datos desde un servidor (**GET**)
@@ -60,4 +60,4 @@ npm run dev
 - Manejar respuestas y errores de forma clara y concisa
 - Configurar encabezados, tokens de autenticación, tiempo de espera y más
 
-**Axios**** es muy común en proyectos ****React**** para ***conectar el frontend con el backend***.
+**Axios** es muy común en proyectos ****React**** para ***conectar el frontend con el backend***.
