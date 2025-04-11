@@ -53,6 +53,7 @@ npm run dev
 
 <h1 align="center"><img src="https://axios-http.com/assets/logo.svg" alt="Axios Logo" width="240"/></h1>
 <p><b>Axios</b> es una librería de <b>JavaScript</b> basada en promesas que se utiliza para realizar <b>peticiones HTTP</b> desde el navegador o desde <b>Node.js</b>. Permite comunicarse fácilmente con <b>APIs</b> externas o internas, enviando y recibiendo datos de manera sencilla.</p>
+
 <h2><ins>Se usa principalmente para:</ins></h2>
 
 - Obtener datos desde un servidor (**GET**)
@@ -61,3 +62,21 @@ npm run dev
 - Configurar encabezados, tokens de autenticación, tiempo de espera y más
 
 **Axios** es muy común en proyectos ****React**** para ***'conectar el Frontend con el Backend'***.
+
+<h2><ins>Instalación de Axios</ins></h2>
+<p>Para instalar <b>Axios</b> en el proyecto, abrir la terminal de <b>Visual Studio Code</b> y ejecutar el siguiente comando:</p>
+```bash
+npm i axios
+```
+
+Luego, verificar que se haya agregado correctamente en el archivo `package.json`, dentro de la sección `"dependencies"`:
+```json
+"dependencies": {
+  "axios": "^1.8.4",
+  "prop-types": "^15.8.1",
+  "react": "^18.3.1",
+  "react-dom": "^18.3.1",
+  "sweetalert2": "^11.6.13"
+}
+```
+Con esto, **Axios** queda listo para ser usado en el proyecto para realizar **peticiones HTTP** de forma sencilla y eficiente.
