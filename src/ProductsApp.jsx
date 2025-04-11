@@ -5,20 +5,7 @@ import { ProductForm } from './components/ProductForm';
 import { create, findAll, remove, update } from './services/productService';
 import Swal from 'sweetalert2';
 
-// const initProducts = [{
-//     id: 1,
-//     name: 'Monitor Asus 37 pulgadas',
-//     description: 'El monitor es perfecto para Juegos!',
-//     price: 1000
-// },
-// {
-//     id: 2,
-//     name: 'Iphone 16 pro',
-//     description: 'El telefono es excelente e incluye Apple Intelligence!',
-//     price: 1600
-// }];
-
-export const ProductsApp = ({ title = 'Title default!' }) => {
+export const ProductsApp = ({title = 'Title default!'}) => {
 
     const [products, setProducts] = useState([]);
 
@@ -30,8 +17,8 @@ export const ProductsApp = ({ title = 'Title default!' }) => {
     });
 
     const getProducts = async () => {
-        const result = await findAll();
-        setProducts(result.data);
+        const result = await findAll(); // Obtener el listado desde la Base de Datos
+        setProducts(result.data || []); // Si result.data es undefined, asigna un array vacío
     }
 
     useEffect(() => {
@@ -39,9 +26,9 @@ export const ProductsApp = ({ title = 'Title default!' }) => {
         console.log('cargando la pagina ...')
     }, []);
 
-    const handlerAddProduct = async (product) => {
+    const handlerAddProduct = async (product) => {  //Se encarga de persistir el 'producto'
         if (product.id > 0) {
-            const response = await update(product);
+            const response = await update(product); // ACTUALIZAR
             setProducts(
                 products.map(prod => {
                     if (prod.id == product.id) {
@@ -54,20 +41,21 @@ export const ProductsApp = ({ title = 'Title default!' }) => {
                 title: "Actualizado con exito!",
                 text: `Producto ${product.name} actualizado con exito!`,
                 icon: "success"
-              });
+            });
         } else {
-            const response = await create(product);
+            const response = await create(product); // CREAR
             setProducts([...products, { ...response.data }]);
             Swal.fire({
                 title: "Creado con exito!",
                 text: `Producto ${product.name} creado con exito!`,
                 icon: "success"
-              });
+            });
         }
     }
 
     const handlerProductSelected = (product) => {
         setProductSelected({ ...product })
+        console.log(productSelected);   //solo para visualizar que funciona correctamente
     }
 
     const handlerRemoveProduct = (id) => {
@@ -79,17 +67,15 @@ export const ProductsApp = ({ title = 'Title default!' }) => {
             confirmButtonColor: "#3085d6",
             cancelButtonColor: "#d33",
             confirmButtonText: "Si, eliminalo!"
-          }).then(async(result) => {
+          }).then( result => {
             if (result.isConfirmed) {
                 remove(id);
-                setProducts(
-                    products.filter(product => product.id != id)
-                );
-              Swal.fire({
-                title: "Eliminado con exito!",
-                text: "Producto eliminado con exito",
-                icon: "success"
-              });
+                setProducts( products.filter(product => product.id != id) );
+                Swal.fire({
+                    title: "Eliminado con exito!",
+                    text: "Producto eliminado con exito",
+                    icon: "success"
+                });
             }
           });
     }
@@ -103,9 +89,11 @@ export const ProductsApp = ({ title = 'Title default!' }) => {
             <div className='col'>
                 {
                     (products.length > 0) ?
-                        <ProductTable products={products}
+                        <ProductTable 
+                            products={products}
                             handlerProductSelected={handlerProductSelected}
-                            handlerRemoveProduct={handlerRemoveProduct} /> :
+                            handlerRemoveProduct={handlerRemoveProduct} /> 
+                        :
                         <div className="alert alert-warning">
                             No hay productos en el sistema!
                         </div>
@@ -115,6 +103,6 @@ export const ProductsApp = ({ title = 'Title default!' }) => {
     </div>
 }
 
-ProductsApp.propTypes = {
+ProductsApp.propTypes = { //Con esto validamos que el valor de title sea un 'String'
     title: PropTypes.string.isRequired
 }

@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { useEffect, useState } from "react"
 
-const initialDataForm = {
+const initialDataForm = {   //valores por defecto
     id: 0,
     name: '',
     description: '',
@@ -12,7 +12,7 @@ export const ProductForm = ({handlerAdd, productSelected}) => {
 
     const [form, setForm] = useState(initialDataForm);
 
-    const { id, name, description, price } = form;
+    const { id, name, description, price } = form;  //nos permite extraer los valores del formulario
 
     useEffect(() => {
         setForm(productSelected);
@@ -28,13 +28,12 @@ export const ProductForm = ({handlerAdd, productSelected}) => {
         handlerAdd(form);
         setForm(initialDataForm);
     }}>
-
         <div>
             <input placeholder="Name"
                 className="form-control my-3 w-75"
                 name="name"
                 value={name}
-            onChange={ (event) => setForm({...form, name: event.target.value})}/>
+                onChange={(event) => setForm({...form, name: event.target.value})}/>
         </div>
         <div>
             <input placeholder="Description"
@@ -52,7 +51,7 @@ export const ProductForm = ({handlerAdd, productSelected}) => {
         </div>
         <div>
             <button className="btn btn-primary" type="submit">
-                {id > 0? 'Update': 'Create'}
+                {id > 0 ? 'Update' : 'Create'}
             </button>
         </div>
     </form>

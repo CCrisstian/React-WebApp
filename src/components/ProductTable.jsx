@@ -5,12 +5,12 @@ export const ProductTable = ({ products, handlerProductSelected, handlerRemovePr
     return <table className="table table-hover table-striped">
         <thead>
             <tr>
-                <th>id</th>
-                <th>name</th>
-                <th>description</th>
-                <th>price</th>
-                <th>update</th>
-                <th>remove</th>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Update</th>
+                <th>Remove</th>
             </tr>
         </thead>
         <tbody>
@@ -22,21 +22,25 @@ export const ProductTable = ({ products, handlerProductSelected, handlerRemovePr
                             <td>{product.name}</td>
                             <td>{product.description}</td>
                             <td>{product.price}</td>
-                            <td><button className="btn btn-sm btn-primary"
-                            onClick={() => handlerProductSelected(product)}>update</button></td>
                             <td>
-                                <button className="btn btn-sm btn-danger"
-                                    onClick={() => handlerRemoveProduct(product.id)}>remove</button>
+                                <button className="btn btn-sm btn-primary" onClick={() => handlerProductSelected(product)}>
+                                    Update
+                                </button>
+                            </td>
+                            <td>
+                                <button className="btn btn-sm btn-danger" onClick={() => handlerRemoveProduct(product.id)}>
+                                    Remove
+                                </button>
                             </td>
                         </tr>
                     )
                 })
             }
-            
         </tbody>
     </table>
 }
-ProductTable.propTypes = {
+
+ProductTable.propTypes = {  //Validaciones
     products: PropTypes.array.isRequired,
     handlerProductSelected: PropTypes.func.isRequired,
     handlerRemoveProduct: PropTypes.func.isRequired
