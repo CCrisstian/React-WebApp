@@ -83,3 +83,29 @@ Luego, verificar que se haya agregado correctamente en el archivo `package.json`
 Con esto, **Axios** queda listo para ser usado en el proyecto para realizar **peticiones HTTP** de forma sencilla y eficiente.
 
 <h1 align="center">productService.js</h1>
+
+<h1 align="center">sweetalert2</h1>
+<p><b>SweetAlert2</b> es una librería moderna de <b>JavaScript</b> que permite mostrar alertas personalizadas y visualmente atractivas en el navegador. Reemplaza las alertas estándar de <b>JavaScript</b> (alert, confirm, prompt) con cuadros de diálogo animados, configurables y con un diseño más profesional.</p>
+
+<h2><ins>¿Para qué sirve?</ins></h2>
+
+- Mostrar **mensajes de éxito, error o advertencia**
+- **Confirmar acciones** del usuario (como eliminar un registro)
+- **Recoger datos de entrada** a través de **formularios** embebidos
+- Mejorar la experiencia del usuario con alertas elegantes y responsivas
+
+<h2><ins>Instalación</ins></h2>
+<p>Para instalar <b>SweetAlert2</b> en el <b>Frontend</b>, se debe abrir la terminal en el proyecto (por ejemplo, desde <b>VSCode</b>) y ejecutar:</p>
+
+```bash
+npm install sweetalert2
+```
+Una vez instalado, la dependencia se agregará automáticamente en el archivo `package.json`:
+
+```json
+"dependencies": {
+  "sweetalert2": "^11.6.13",
+  ...
+}
+```
+Ahora es posible importar y utilizar **SweetAlert2** en los componentes de **React** para mostrar alertas personalizadas.
