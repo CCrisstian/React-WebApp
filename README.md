@@ -89,7 +89,6 @@ npm run dev
  **Elementos principales** del `package.json`
 - `name: "3-react-products"`. Nombre del proyecto.
 - `private: true`. Evita que el paquete se publique en el registro de npm.
-- `type: "module"`. Permite usar **import/export** en lugar de **require()**.
 
 🔥 **Scripts** (`scripts`) Comandos útiles para desarrollo y producción:
 - `dev: "vite"` → Inicia el servidor de desarrollo.
@@ -107,7 +106,6 @@ npm run dev
 - `sweetalert2`: Librería para mostrar ***alertas personalizadas***.
 
 🔧 **Dependencias de desarrollo** (`devDependencies`) Herramientas útiles solo en desarrollo:
-- `@eslint/js`, `eslint`, `eslint-plugin-react`, etc. Configuración de **ESLint** para mejorar la calidad del código.
 - `@types/react`, `@types/react-dom`. Tipos de `React` para mejorar compatibilidad (útil con `TypeScript`).
 - `@vitejs/plugin-react`. Plugin para integrar `React` con `Vite`.
 - `vite`. Herramienta de **desarrollo** y **construcción ultrarrápida**.
