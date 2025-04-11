@@ -49,7 +49,7 @@ npm run dev
 - Acceder al directorio del proyecto
 - Instalar las dependencias
 - Instala la librería `PropTypes`, que permite definir y validar los tipos de propiedades en componentes de `React`.
-- Esto inicia el servidor local y proporciona una URL (generalmente **http://localhost:5173/**) donde ver tu aplicación corriendo. / También es el comando para ejecutar el proyecto desde un editor de código.
+- Esto inicia el servidor local y proporciona una URL (generalmente **http://localhost:5173/**) donde ver la aplicación corriendo. / También es el comando para ejecutar el proyecto desde un editor de código.
 
 <h1 align="center"><img src="https://axios-http.com/assets/logo.svg" alt="Axios Logo" width="240"/></h1>
 <p><b>Axios</b> es una librería de <b>JavaScript</b> basada en promesas que se utiliza para realizar <b>peticiones HTTP</b> desde el navegador o desde <b>Node.js</b>. Permite comunicarse fácilmente con <b>APIs</b> externas o internas, enviando y recibiendo datos de manera sencilla.</p>
