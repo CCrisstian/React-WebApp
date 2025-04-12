@@ -16,39 +16,6 @@
 
 <img src="https://skillicons.dev/icons?i=nodejs&perline=14" /> **Node.Js**: Es un entorno de ejecución de JavaScript ***del lado del servidor***. Permite ***construir aplicaciones web escalables y manejar operaciones de backend***, como **Bases de Datos**, **autenticación** y **lógica de negocio**.
 
-<h2><ins>Comandos de creacion del Proyecto</ins></h2>
-<p>Usando los siguientes comandos ingresados por "Simbolo de Sistema" (Windows).</p> 
-
-```bash
-npx
-create-vite
-```
-```bash
-Project name: 3-react-products
-
-Select a framework: React
-
-Select a variant: JavaScript
-```
-```bash
-cd 3-react-products
-```
-```bash
-npm install
-```
-```bash
-npm i prop-types
-```
-```bash
-npm run dev
-```
-- Usa `npx` para ejecutar `create-vite` sin instalarlo globalmente.
-- Crea un nuevo proyecto llamado **"3-react-products"**.
-- Selección de **Framework**: Seleccionado `React` como el **framework** principal para el **frontend**.
-- Selección de **Variante**: Seleccionado `JavaScript`, lo que significa que no se usará **TypeScript** en este proyecto.
-- Acceder al directorio del proyecto
-- Instalar las dependencias
-- Instala la librería `PropTypes`, que permite definir y validar los tipos de propiedades en componentes de `React`.
 - Esto inicia el servidor local y proporciona una URL (generalmente **http://localhost:5173/**) donde ver la aplicación corriendo. / También es el comando para ejecutar el proyecto desde un editor de código.
 
 <h1 align="center"><img src="https://axios-http.com/assets/logo.svg" alt="Axios Logo" width="240"/></h1>
@@ -62,25 +29,6 @@ npm run dev
 - Configurar encabezados, tokens de autenticación, tiempo de espera y más
 
 **Axios** es muy común en proyectos ****React**** para ***'conectar el Frontend con el Backend'***.
-
-<h2><ins>Instalación de Axios</ins></h2>
-<p>Para instalar <b>Axios</b> en el proyecto, abrir la terminal de <b>Visual Studio Code</b> y ejecutar el siguiente comando:</p>
-
-```bash
-npm i axios
-```
-
-Luego, verificar que se haya agregado correctamente en el archivo `package.json`, dentro de la sección `"dependencies"`:
-```json
-"dependencies": {
-  "axios": "^1.8.4",
-  "prop-types": "^15.8.1",
-  "react": "^18.3.1",
-  "react-dom": "^18.3.1",
-  "sweetalert2": "^11.6.13"
-}
-```
-Con esto, **Axios** queda listo para ser usado en el proyecto para realizar **peticiones HTTP** de forma sencilla y eficiente.
 
 <h1 align="center">productService.js</h1>
 <p>El archivo <b>productService.js</b> encapsula toda la lógica de comunicación entre el <b>Frontend React</b> y el <b>Backend Java + Spring Boot</b>. Su función es actuar como una capa de servicio que facilita el consumo de la <b>API RESTful</b> del <b>Backend</b>, mediante <b>solicitudes HTTP</b> utilizando <b>Axios</b>.</p>
