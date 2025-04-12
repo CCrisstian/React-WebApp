@@ -68,7 +68,7 @@ createRoot(document.getElementById('root')).render(
 - Gestión de acciones del usuario (seleccionar, eliminar productos)
 - Coordinación con los servicios definidos en `productService.js`
 
-<h2><ins>Funcionalidades principales</ins></h2>
+<h2><ins>Funcionalidades</ins></h2>
 
 - **Estado de productos**
   - Almacena la lista actual de productos. Se actualiza dinámicamente tras operaciones **CRUD**.
@@ -142,6 +142,11 @@ const handlerRemoveProduct = (id) => {
   - Recibe la lista products y dos **handlers**:
     - `handlerProductSelected` para **editar**
     - `handlerRemoveProduct` para **eliminar**
+
+<h1 align="center">'ProductForm.jsx'</h1>
+<p><b>ProductForm</b> es un componente controlado que permite al usuario crear o editar productos. Se encarga de capturar la entrada del usuario y enviar los datos al componente principal (<b>ProductsApp</b>) para ser procesados (guardados o actualizados).</p>
+<h2><ins>Funcionalidades</ins></h2>
+
 
 <h1 align="center"><img src="https://axios-http.com/assets/logo.svg" alt="Axios Logo" width="240"/></h1>
 <p><b>Axios</b> es una librería de <b>JavaScript</b> basada en promesas que se utiliza para realizar <b>peticiones HTTP</b> desde el navegador o desde <b>Node.js</b>. Permite comunicarse fácilmente con <b>APIs</b> externas o internas, enviando y recibiendo datos de manera sencilla.</p>
