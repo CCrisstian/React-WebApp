@@ -83,8 +83,94 @@ Luego, verificar que se haya agregado correctamente en el archivo `package.json`
 Con esto, **Axios** queda listo para ser usado en el proyecto para realizar **peticiones HTTP** de forma sencilla y eficiente.
 
 <h1 align="center">productService.js</h1>
-<p></p>
+<p>El archivo <b>productService.js</b> encapsula toda la lógica de comunicación entre el <b>Frontend React</b> y el <b>Backend Java + Spring Boot</b>. Su función es actuar como una capa de servicio que facilita el consumo de la <b>API RESTful</b> del <b>Backend</b>, mediante <b>solicitudes HTTP</b> utilizando <b>Axios</b>.</p>
+<p>Esta clase se encarga de realizar operaciones <b>CRUD</b> (<b>Crear, Leer, Actualizar y Eliminar</b>) sobre la tabla <b>'products'</b> que reside en una <b>Base de Datos SQL</b>, sin que los componentes del <b>Frontend</b> tengan que preocuparse por los detalles técnicos de la comunicación.</p>
+<h2><ins>Funciones</ins></h2>
 
+🖥️ **Frontend** (`productService.js` con **React** + **Axios**):
+- ***Solo se encarga de 'enviar'*** **solicitudes** (**GET**, **POST**, **PUT**, **DELETE**) al **Backend**.
+- Muestra la interfaz de usuario.
+- ***No tiene conocimiento de la*** **Base de Datos** ***ni de la*** **lógica interna** del negocio.
+- Usa **Axios** para consumir la **API** del **Backend**.
+  
+⚙️ **Backend** (`ProductController.java` con **Spring Boot**):
+- ***Se encarga de 'recibir' esas solicitudes*** y tomar decisiones (**validaciones**, **reglas de negocio**, etc).
+- Llama a los servicios, que a su vez consultan los repositorios (conexión real a la **Base de Datos**).
+- Devuelve una respuesta estructurada (**JSON**).
+
+🛢️ **Base de Datos** (**SQL**):
+- Guarda los datos persistentes (productos en este caso).
+- El **Backend** accede a ella a través del servicio y el repositorio.
+
+🧠 En resumen:
+  📲 **Frontend** = **Interfaz** + **Solicitudes**
+  ⚙️ **Backend** = **Lógica** + **Persistencia**
+  🗃️ **Base de Datos** = **Almacenamiento**
+
+<h2><ins>Responsabilidades separadas:</ins></h2>
+
+- `Conexión con el Backend`
+  - Define la **URL** base del **Backend** local que expone los endpoints **REST** para interactuar con la **Base de Datos**.
+```javascript
+// Ruta del Backend, proyecto 'https://github.com/CCrisstian/Java_SpringBoot_API-RESTful'
+const baseUrl = 'http://localhost:8080';
+```
+
+- `findAll()`
+  - Recupera todos los productos disponibles en la **Base de Datos**.
+  - Se conecta con el endpoint **GET** del **Backend** y devuelve un arreglo de productos.
+```javascript
+export const findAll = async () => {
+    try {
+        const response = await axios.get(baseUrl);  // Solicitud HTTP GET
+        return response;
+    } catch (error) {
+        console.log(error);
+    }
+    return [];
+}
+```
+
+- `create({ name, description, price })`
+  - Crea un nuevo producto con los datos proporcionados.
+  - Envía una solicitud **POST** con los campos **name, description y price** al **Backend**, que los almacena en la **Base de Datos**.
+```javascript
+export const create = async ({ name, description, price }) => {
+    try {
+        return await axios.post(baseUrl, { name, description, price })    // Solicitud HTTP POST
+    } catch (error) {
+        console.log(error);
+    }
+    return undefined;
+}
+```
+ 
+- `update({ id, name, description, price })`
+  - **Actualiza** un producto existente, identificándolo mediante su **'id'**.
+  - Envía una solicitud **PUT** con los nuevos datos para reemplazar los valores anteriores del producto en la **Base de Datos**.
+```javascript
+export const update = async ({ id, name, description, price }) => {
+    try {
+        return await axios.put(`${baseUrl}/${id}`, { name, description, price })    // Solicitud HTTP PUT
+    } catch (error) {
+        console.log(error);
+    }
+    return undefined;
+}
+```
+
+- `remove(id)`
+  - **Elimina** un producto de la **Base de Datos**, utilizando su identificador único **'id'**.
+  - Realiza una solicitud **DELETE** para quitar el producto correspondiente del servidor.
+```javascript
+export const remove = async (id) => {
+    try {
+        await axios.delete(`${baseUrl}/${id}`)  // Solicitud HTTP DELETE
+    } catch (error) {
+        console.log(error);
+    }
+}
+```
 
 <h1 align="center"><img src="https://sweetalert2.github.io/images/SweetAlert2.png" alt="SweetAlert2 Logo" width="240"/></h1>
 <p><b>SweetAlert2</b> es una librería moderna de <b>JavaScript</b> que permite mostrar alertas personalizadas y visualmente atractivas en el navegador. Reemplaza las alertas estándar de <b>JavaScript</b> (alert, confirm, prompt) con cuadros de diálogo animados, configurables y con un diseño más profesional.</p>
@@ -95,19 +181,3 @@ Con esto, **Axios** queda listo para ser usado en el proyecto para realizar **pe
 - **Confirmar acciones** del usuario (como eliminar un registro)
 - **Recoger datos de entrada** a través de **formularios** embebidos
 - Mejorar la experiencia del usuario con alertas elegantes y responsivas
-
-<h2><ins>Instalación</ins></h2>
-<p>Para instalar <b>SweetAlert2</b> en el <b>Frontend</b>, se debe abrir la terminal en el proyecto (por ejemplo, desde <b>VSCode</b>) y ejecutar:</p>
-
-```bash
-npm install sweetalert2
-```
-Una vez instalado, la dependencia se agregará automáticamente en el archivo `package.json`:
-
-```json
-"dependencies": {
-  "sweetalert2": "^11.6.13",
-  ...
-}
-```
-Ahora es posible importar y utilizar **SweetAlert2** en los componentes de **React** para mostrar alertas personalizadas.
