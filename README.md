@@ -103,9 +103,9 @@ Con esto, **Axios** queda listo para ser usado en el proyecto para realizar **pe
 - El **Backend** accede a ella a través del servicio y el repositorio.
 
 🧠 En resumen:
-  📲 **Frontend** = **Interfaz** + **Solicitudes**
-  ⚙️ **Backend** = **Lógica** + **Persistencia**
-  🗃️ **Base de Datos** = **Almacenamiento**
+- 📲 **Frontend** = **Interfaz** + **Solicitudes**
+- ⚙️ **Backend** = **Lógica** + **Persistencia**
+- 🗃️ **Base de Datos** = **Almacenamiento**
 
 <h2><ins>Responsabilidades separadas:</ins></h2>
 
