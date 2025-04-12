@@ -21,7 +21,7 @@
 <h1 align="center">Jerarquía de Componentes dentro del Proyecto</h1>
 <p>Este proyecto <b>Frontend</b> en <b>React</b> sigue una estructura clara basada en componentes y servicios, separando la lógica de negocio de la interfaz visual.</p>
 
-```java
+```javascript
 main.jsx                  ← Punto de entrada
  └── ProductsApp.jsx      ← Componente principal (Padre)
       ├── ProductForm.jsx          ← Hijo - Formulario (Crear/Editar productos)
@@ -43,6 +43,106 @@ main.jsx                  ← Punto de entrada
 - `productService.js`
   - Servicio que conecta el **Frontend** con el **Backend** mediante **Axios**. Contiene funciones para realizar operaciones **CRUD** sobre los productos (**findAll**, **create**, **update**, **remove**). Se utiliza únicamente desde `ProductsApp.jsx`.
 
+<h1 align="center">'main.jsx'</h1>
+<p>El archivo <b>main.jsx</b> es el punto de entrada principal de la aplicación <b>React</b>. Aquí se inicia la ejecución de la interfaz del usuario, se monta el componente principal <b>ProductsApp</b> en el <b>DOM</b> y se activa el <b>modo estricto</b> de <b>React</b> para ayudar a detectar errores comunes en desarrollo.</p>
+
+```jsx
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import {ProductsApp} from './ProductsApp.jsx'
+
+createRoot(document.getElementById('root')).render(
+  <StrictMode>
+    <ProductsApp title={'Frontend React!'}/>
+  </StrictMode>,
+)
+```
+- `<ProductsApp />`. Es el componente principal de la aplicación, que se encarga de toda la lógica de productos. Se le pasa una propiedad `title` con el valor **"Frontend React!"**.
+
+<h1 align="center">'ProductsApp.jsx'</h1>
+<p><b>ProductsApp</b> es el componente raíz del <b>Frontend</b>. Contiene toda la lógica central de la aplicación, incluyendo:</p>
+
+- Carga de productos desde el **Backend**
+- Manejo del estado global de la lista de productos
+- Gestión del formulario (crear/editar)
+- Gestión de acciones del usuario (seleccionar, eliminar productos)
+- Coordinación con los servicios definidos en `productService.js`
+
+<h2><ins>Funcionalidades principales</ins></h2>
+
+- **Estado de productos**
+  - Almacena la lista actual de productos. Se actualiza dinámicamente tras operaciones **CRUD**.
+```jsx
+const [products, setProducts] = useState([]);
+```
+
+- **Estado de producto seleccionado**
+  - Almacena un producto seleccionado para ser editado. Este estado se pasa al formulario.
+```jsx
+const [productSelected, setProductSelected] = useState({
+     id: 0,
+     name: '',
+     description: '',
+     price: ''
+});
+```
+
+- **Carga inicial de productos**
+  - Al montar el componente, se ejecuta `getProducts()` para hacer un **GET** al **Backend** y cargar los productos iniciales.
+```jsx
+const getProducts = async () => {
+    const result = await findAll();
+    setProducts(result.data || []);
+}
+
+useEffect(() => {
+    getProducts();
+    console.log('cargando la pagina ...')
+}, []);
+```
+
+- **Crear o actualizar un producto**
+  - Dependiendo del valor de **id**, se decide si **'Crear'** un nuevo producto o **'Actualizar'** uno existente. Después de la operación, el estado `products` se actualiza.
+```jsx
+const handlerAddProduct = async (product) => {
+    if (product.id > 0) {
+        // Actualizar
+        const response = await update(product);
+        setProducts(products.map(p => p.id === product.id ? response.data : p));
+    } else {
+        // Crear
+        const response = await create(product);
+        setProducts([...products, response.data]);
+    }
+}
+```
+
+- **Seleccionar producto para edición**
+  - Cuando el usuario elige editar un producto, este se copia al estado `productSelected`, que se envía al formulario para llenar los campos.
+```jsx
+const handlerProductSelected = (product) => {
+    setProductSelected({ ...product });
+}
+```
+
+- **Eliminar producto**
+  - Elimina el producto del **Backend** y luego actualiza el estado eliminándolo localmente.
+```jsx
+const handlerRemoveProduct = (id) => {
+    remove(id);
+    setProducts(products.filter(product => product.id !== id));
+}
+```
+
+<h2><ins>Conexión con otros componentes</ins></h2>
+
+- `<ProductForm />`:
+  - Recibe como props el **handler** `handlerAddProduct` y el `productSelected`.
+- `<ProductTable />`:
+  - Recibe la lista products y dos **handlers**:
+    - `handlerProductSelected` para **editar**
+    - `handlerRemoveProduct` para **eliminar**
+
 <h1 align="center"><img src="https://axios-http.com/assets/logo.svg" alt="Axios Logo" width="240"/></h1>
 <p><b>Axios</b> es una librería de <b>JavaScript</b> basada en promesas que se utiliza para realizar <b>peticiones HTTP</b> desde el navegador o desde <b>Node.js</b>. Permite comunicarse fácilmente con <b>APIs</b> externas o internas, enviando y recibiendo datos de manera sencilla.</p>
 
@@ -55,7 +155,7 @@ main.jsx                  ← Punto de entrada
 
 **Axios** es muy común en proyectos ****React**** para ***'conectar el Frontend con el Backend'***.
 
-<h1 align="center">productService.js</h1>
+<h1 align="center">'productService.js'</h1>
 <p>El archivo <b>productService.js</b> encapsula toda la lógica de comunicación entre el <b>Frontend React</b> y el <b>Backend Java + Spring Boot</b>. Su función es actuar como una capa de servicio que facilita el consumo de la <b>API RESTful</b> del <b>Backend</b>, mediante <b>solicitudes HTTP</b> utilizando <b>Axios</b>.</p>
 <p>Esta clase se encarga de realizar operaciones <b>CRUD</b> (<b>Crear, Leer, Actualizar y Eliminar</b>) sobre la tabla <b>'products'</b> que reside en una <b>Base de Datos SQL</b>, sin que los componentes del <b>Frontend</b> tengan que preocuparse por los detalles técnicos de la comunicación.</p>
 <h2><ins>Funciones</ins></h2>
