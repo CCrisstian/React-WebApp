@@ -71,13 +71,15 @@ createRoot(document.getElementById('root')).render(
 <h2><ins>Funcionalidades</ins></h2>
 
 - **Estado de productos**
-  - Almacena la lista actual de productos. Se actualiza dinámicamente tras operaciones **CRUD**.
+
+Almacena la lista actual de productos. Se actualiza dinámicamente tras operaciones **CRUD**.
 ```jsx
 const [products, setProducts] = useState([]);
 ```
 
 - **Estado de producto seleccionado**
-  - Almacena un producto seleccionado para ser editado. Este estado se pasa al formulario.
+
+Almacena un producto seleccionado para ser editado. Este estado se pasa al formulario.
 ```jsx
 const [productSelected, setProductSelected] = useState({
      id: 0,
@@ -88,7 +90,8 @@ const [productSelected, setProductSelected] = useState({
 ```
 
 - **Carga inicial de productos**
-  - Al montar el componente, se ejecuta `getProducts()` para hacer un **GET** al **Backend** y cargar los productos iniciales.
+
+Al montar el componente, se ejecuta `getProducts()` para hacer un **GET** al **Backend** y cargar los productos iniciales.
 ```jsx
 const getProducts = async () => {
     const result = await findAll();
@@ -102,7 +105,8 @@ useEffect(() => {
 ```
 
 - **Crear o actualizar un producto**
-  - Dependiendo del valor de **id**, se decide si **'Crear'** un nuevo producto o **'Actualizar'** uno existente. Después de la operación, el estado `products` se actualiza.
+
+Dependiendo del valor de **id**, se decide si **'Crear'** un nuevo producto o **'Actualizar'** uno existente. Después de la operación, el estado `products` se actualiza.
 ```jsx
 const handlerAddProduct = async (product) => {
     if (product.id > 0) {
@@ -118,7 +122,8 @@ const handlerAddProduct = async (product) => {
 ```
 
 - **Seleccionar producto para edición**
-  - Cuando el usuario elige editar un producto, este se copia al estado `productSelected`, que se envía al formulario para llenar los campos.
+
+Cuando el usuario elige editar un producto, este se copia al estado `productSelected`, que se envía al formulario para llenar los campos.
 ```jsx
 const handlerProductSelected = (product) => {
     setProductSelected({ ...product });
@@ -126,7 +131,8 @@ const handlerProductSelected = (product) => {
 ```
 
 - **Eliminar producto**
-  - Elimina el producto del **Backend** y luego actualiza el estado eliminándolo localmente.
+
+Elimina el producto del **Backend** y luego actualiza el estado eliminándolo localmente.
 ```jsx
 const handlerRemoveProduct = (id) => {
     remove(id);
@@ -147,6 +153,76 @@ const handlerRemoveProduct = (id) => {
 <p><b>ProductForm</b> es un componente controlado que permite al usuario crear o editar productos. Se encarga de capturar la entrada del usuario y enviar los datos al componente principal (<b>ProductsApp</b>) para ser procesados (guardados o actualizados).</p>
 <h2><ins>Funcionalidades</ins></h2>
 
+- **Estado local del formulario**
+
+El componente mantiene su propio estado utilizando `useState` para controlar los campos del formulario. Este estado se inicializa con la constante `initialDataForm`:
+```jsx
+const initialDataForm = {
+    id: 0,
+    name: '',
+    description: '',
+    price: ''
+};
+
+const [form, setForm] = useState(initialDataForm);
+```
+Esto permite que:
+- El **formulario comience vacío** ***al renderizarse por primera vez***.
+- Los campos puedan **'resetearse'** fácilmente después de una **creación** o **edición**.
+
+Los valores de `form` se actualizan dinámicamente a medida que el usuario escribe en los campos (`onChange`), manteniendo el formulario completamente controlado por **React**.
+
+Luego, se desestructura el objeto `form` para extraer sus propiedades individuales de forma más cómoda:
+```jsx
+const { id, name, description, price } = form;
+```
+Esto permite:
+- Asignar directamente los valores a los campos del formulario.
+- Utilizar cada propiedad de forma limpia en **JSX** sin repetir `form.name`, `form.description`, etc.
+
+- **Inicialización con un producto seleccionado**
+
+Cuando el usuario selecciona un producto desde la tabla, este **hook** actualiza el formulario para que sus campos se llenen con los datos del producto a editar.
+```jsx
+useEffect(() => {
+    setForm(productSelected);
+}, [productSelected]);
+```
+
+- **Envío del formulario**
+  - Previene el comportamiento por defecto del navegador.
+  - Verifica que los campos no estén vacíos.
+  - Llama a la función `handlerAdd()` (pasada como **prop** desde `ProductsApp`) para procesar el producto.
+  - Luego, reinicia el formulario a sus valores por defecto.
+```jsx
+<form onSubmit={event => {
+    event.preventDefault();
+    if (!name || !description || !price) {
+        alert('Debe completar los datos del formulario!');
+        return;
+    }
+    handlerAdd(form);
+    setForm(initialDataForm);
+}}>
+```
+
+- **Manejo de cambios en inputs**
+
+ Cada **input** usa `onChange` para actualizar el estado local (`form`) de manera controlada:
+ ```jsx
+onChange={(event) => setForm({...form, name: event.target.value})}
+```
+ Esto permite mantener **sincronizados** los valores del formulario con el estado `React`.
+
+- **Props esperadas**
+  - `handlerAdd`: Función encargada de manejar el producto creado o editado.
+  - `productSelected`: Objeto con los datos del producto a editar. Si está vacío, el formulario se usa para crear uno nuevo.
+ ```jsx
+ProductForm.propTypes = {
+    handlerAdd: PropTypes.func.isRequired,
+    productSelected: PropTypes.object.isRequired
+}
+ ```
 
 <h1 align="center"><img src="https://axios-http.com/assets/logo.svg" alt="Axios Logo" width="240"/></h1>
 <p><b>Axios</b> es una librería de <b>JavaScript</b> basada en promesas que se utiliza para realizar <b>peticiones HTTP</b> desde el navegador o desde <b>Node.js</b>. Permite comunicarse fácilmente con <b>APIs</b> externas o internas, enviando y recibiendo datos de manera sencilla.</p>
