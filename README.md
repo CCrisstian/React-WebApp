@@ -224,6 +224,61 @@ ProductForm.propTypes = {
 }
  ```
 
+<h1 align="center">'ProductTable.jsx'</h1>
+<p><b>ProductTable</b> es un componente de presentación que recibe la lista de productos como prop y los muestra en una tabla.</p>
+Permite al usuario:
+
+- **'Visualizar'** los productos disponibles.
+- **'Seleccionar'** un producto para editarlo.
+- **'Eliminar'** un producto del sistema.
+
+***No maneja estado propio ni lógica de negocio***, sino que delegada la gestión de eventos al componente *"padre"* `ProductsApp`.
+<h2><ins>Funcionalidades</ins></h2>
+
+- **Listado de productos en una tabla**
+
+El componente recibe la **prop** `products` (array de objetos) y la recorre con `.map()` para **'mostrar'** cada producto en una fila:
+ ```jsx
+products.map(product => (
+  <tr key={product.id}>
+    <td>{product.id}</td>
+    <td>{product.name}</td>
+    <td>{product.description}</td>
+    <td>{product.price}</td>
+    ...
+  </tr>
+))
+ ```
+
+- **Botón para 'Seleccionar' producto ('Actualizar')**
+
+Al hacer clic, se llama a la función `handlerProductSelected` (recibida por **props**), pasando como argumento el producto actual. Esto permite al **"padre"** (`ProductsApp`) preparar ese producto para edición y enviarlo al formulario.
+```jsx
+<button onClick={() => handlerProductSelected(product)}>
+  Update
+</button>
+```
+
+- **Botón para 'Eliminar' producto**
+
+Este botón dispara la función `handlerRemoveProduct`, que **'Elimina'** el producto según su `id`.
+```jsx
+<button onClick={() => handlerRemoveProduct(product.id)}>
+  Remove
+</button>
+```
+- **Props esperadas**
+```jsx
+ProductTable.propTypes = {
+  products: PropTypes.array.isRequired,
+  handlerProductSelected: PropTypes.func.isRequired,
+  handlerRemoveProduct: PropTypes.func.isRequired
+}
+```
+  - `products`: Lista de productos a mostrar.
+  - `handlerProductSelected`: Función para manejar la **'Selección'** de un producto (edición).
+  - `handlerRemoveProduct`: Función para manejar la **'Eliminación'** de un producto.
+
 <h1 align="center"><img src="https://axios-http.com/assets/logo.svg" alt="Axios Logo" width="240"/></h1>
 <p><b>Axios</b> es una librería de <b>JavaScript</b> basada en promesas que se utiliza para realizar <b>peticiones HTTP</b> desde el navegador o desde <b>Node.js</b>. Permite comunicarse fácilmente con <b>APIs</b> externas o internas, enviando y recibiendo datos de manera sencilla.</p>
 
