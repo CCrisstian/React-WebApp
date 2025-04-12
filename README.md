@@ -83,6 +83,8 @@ Luego, verificar que se haya agregado correctamente en el archivo `package.json`
 Con esto, **Axios** queda listo para ser usado en el proyecto para realizar **peticiones HTTP** de forma sencilla y eficiente.
 
 <h1 align="center">productService.js</h1>
+<p></p>
+
 
 <h1 align="center"><img src="https://sweetalert2.github.io/images/SweetAlert2.png" alt="SweetAlert2 Logo" width="240"/></h1>
 <p><b>SweetAlert2</b> es una librería moderna de <b>JavaScript</b> que permite mostrar alertas personalizadas y visualmente atractivas en el navegador. Reemplaza las alertas estándar de <b>JavaScript</b> (alert, confirm, prompt) con cuadros de diálogo animados, configurables y con un diseño más profesional.</p>
