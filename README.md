@@ -18,6 +18,31 @@
 
 - Esto inicia el servidor local y proporciona una URL (generalmente **http://localhost:5173/**) donde ver la aplicación corriendo. / También es el comando para ejecutar el proyecto desde un editor de código.
 
+<h1 align="center">Jerarquía de Componentes dentro del Proyecto</h1>
+<p>Este proyecto <b>Frontend</b> en <b>React</b> sigue una estructura clara basada en componentes y servicios, separando la lógica de negocio de la interfaz visual.</p>
+
+```java
+main.jsx                  ← Punto de entrada
+ └── ProductsApp.jsx      ← Componente principal (Padre)
+      ├── ProductForm.jsx          ← Hijo - Formulario (Crear/Editar productos)
+      ├── ProductTable.jsx         ← Hijo - Tabla (Visualizar/Eliminar/Seleccionar productos)
+      └── productService.js        ← Servicio (Comunicación con el Backend vía Axios)
+```
+
+- `main.jsx`
+  - Punto de entrada de la aplicación **React**. Monta el componente principal `ProductsApp` en el **DOM** utilizando `ReactDOM.createRoot`. También habilita el `StrictMode` de **React** para detectar posibles errores durante el desarrollo.
+- `ProductsApp.jsx`
+  - Componente principal del **Frontend**. Se encarga de:
+    - Obtener los productos desde el **Backend**.
+    - Administrar el estado global de la aplicación.
+    - Coordinar la lógica entre los formularios (`ProductForm`) y la tabla (`ProductTable`).
+- `ProductForm.jsx`
+  - Formulario para la creación o edición de productos. Captura los datos ingresados por el usuario y los envía al componente padre (`ProductsApp`) para su persistencia en la **Base de Datos**. Se inicializa con valores por defecto y responde a cambios en el producto seleccionado.
+- `ProductTable.jsx`
+  - Tabla que muestra todos los productos cargados. Permite seleccionar un producto para editarlo o eliminarlo, notificando estas acciones al componente principal (`ProductsApp`).
+- `productService.js`
+  - Servicio que conecta el **Frontend** con el **Backend** mediante **Axios**. Contiene funciones para realizar operaciones **CRUD** sobre los productos (**findAll**, **create**, **update**, **remove**). Se utiliza únicamente desde `ProductsApp.jsx`.
+
 <h1 align="center"><img src="https://axios-http.com/assets/logo.svg" alt="Axios Logo" width="240"/></h1>
 <p><b>Axios</b> es una librería de <b>JavaScript</b> basada en promesas que se utiliza para realizar <b>peticiones HTTP</b> desde el navegador o desde <b>Node.js</b>. Permite comunicarse fácilmente con <b>APIs</b> externas o internas, enviando y recibiendo datos de manera sencilla.</p>
 
@@ -119,32 +144,6 @@ export const remove = async (id) => {
     }
 }
 ```
-
-<h1 align="center">Jerarquía de Componentes dentro del Proyecto</h1>
-<p>Este proyecto <b>Frontend</b> en <b>React</b> sigue una estructura clara basada en componentes y servicios, separando la lógica de negocio de la interfaz visual.</p>
-
-```java
-main.jsx                  ← Punto de entrada
- └── ProductsApp.jsx      ← Componente principal (Padre)
-      ├── ProductForm.jsx          ← Hijo - Formulario (Crear/Editar productos)
-      ├── ProductTable.jsx         ← Hijo - Tabla (Visualizar/Eliminar/Seleccionar productos)
-      └── productService.js        ← Servicio (Comunicación con el Backend vía Axios)
-```
-
-- `main.jsx`
-  - Punto de entrada de la aplicación **React**. Monta el componente principal `ProductsApp` en el **DOM** utilizando `ReactDOM.createRoot`. También habilita el `StrictMode` de **React** para detectar posibles errores durante el desarrollo.
-- `ProductsApp.jsx`
-  - Componente principal del **Frontend**. Se encarga de:
-    - Obtener los productos desde el **Backend**.
-    - Administrar el estado global de la aplicación.
-    - Coordinar la lógica entre los formularios (`ProductForm`) y la tabla (`ProductTable`).
-- `ProductForm.jsx`
-  - Formulario para la creación o edición de productos. Captura los datos ingresados por el usuario y los envía al componente padre (`ProductsApp`) para su persistencia en la **Base de Datos**. Se inicializa con valores por defecto y responde a cambios en el producto seleccionado.
-- `ProductTable.jsx`
-  - Tabla que muestra todos los productos cargados. Permite seleccionar un producto para editarlo o eliminarlo, notificando estas acciones al componente principal (`ProductsApp`).
-- `productService.js`
-  - Servicio que conecta el **Frontend** con el **Backend** mediante **Axios**. Contiene funciones para realizar operaciones **CRUD** sobre los productos (**findAll**, **create**, **update**, **remove**). Se utiliza únicamente desde `ProductsApp.jsx`.
-
 <h1 align="center"><img src="https://sweetalert2.github.io/images/SweetAlert2.png" alt="SweetAlert2 Logo" width="240"/></h1>
 <p><b>SweetAlert2</b> es una librería moderna de <b>JavaScript</b> que permite mostrar alertas personalizadas y visualmente atractivas en el navegador. Reemplaza las alertas estándar de <b>JavaScript</b> (alert, confirm, prompt) con cuadros de diálogo animados, configurables y con un diseño más profesional.</p>
 
