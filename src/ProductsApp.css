@@ -1,0 +1,91 @@
+.logo-pattern-bg {
+    background-image:
+        url('https://skillicons.dev/icons?i=react'),
+        url('https://skillicons.dev/icons?i=vite'),
+        url('https://skillicons.dev/icons?i=axios');
+    background-repeat: repeat;
+    background-size: 100px;
+    background-position: 0 0, 50px 50px, 100px 100px;
+    animation: moveBackground 20s linear infinite;
+    min-height: 100vh;
+
+}
+
+/* Animación de pulso suave */
+@keyframes pulseGlow {
+    0% {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5),
+            0 0 20px rgba(255, 255, 255, 0.4),
+            0 0 30px rgba(255, 255, 255, 0.3);
+    }
+
+    50% {
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.9),
+            0 0 30px rgba(255, 255, 255, 0.7),
+            0 0 40px rgba(255, 255, 255, 0.6);
+    }
+
+    100% {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5),
+            0 0 20px rgba(255, 255, 255, 0.4),
+            0 0 30px rgba(255, 255, 255, 0.3);
+    }
+}
+
+/* Estilos animados */
+.logo-pattern-bg h1,
+.logo-pattern-bg h2 {
+    color: #ffffff;
+    font-weight: bold;
+    animation: pulseGlow 3s ease-in-out infinite;
+}
+
+/* Diferenciación de tamaños */
+.logo-pattern-bg h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.logo-pattern-bg h2 {
+    font-size: 2rem;
+    margin-top: 1rem;
+}
+
+/* Contenedor oscuro para títulos */
+.title-background {
+    background-color: rgba(0, 0, 0, 0.6);
+    /* fondo oscuro translúcido */
+    padding: 10px 20px;
+    border-radius: 12px;
+    display: inline-block;
+}
+
+/* También podrías mejorar la visibilidad del formulario con un fondo translúcido */
+form {
+    background-color: rgba(0, 0, 0, 0.75);
+    /* Más opaco */
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
+    width: fit-content;
+    margin: 0 auto;
+    /* Centrado */
+}
+
+.product-table-wrapper {
+    background-color: rgba(0, 0, 0, 0.75);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
+    overflow-x: auto;
+}
+
+@keyframes moveBackground {
+    0% {
+        background-position: 0 0, 50px 50px, 100px 100px;
+    }
+
+    100% {
+        background-position: 1000px 1000px, 1050px 1050px, 1100px 1100px;
+    }
+}

@@ -4,8 +4,10 @@ import { ProductTable } from './components/ProductTable';
 import { ProductForm } from './components/ProductForm';
 import { create, findAll, remove, update } from './services/productService';
 import Swal from 'sweetalert2';
+import imagen from './assets/technicaldifficulties-1024x576.jpg';
+import './ProductsApp.css';
 
-export const ProductsApp = ({title = 'Title default!'}) => {
+export const ProductsApp = ({ title = 'Title default!' }) => {
 
     const [products, setProducts] = useState([]);
 
@@ -67,38 +69,48 @@ export const ProductsApp = ({title = 'Title default!'}) => {
             confirmButtonColor: "#3085d6",
             cancelButtonColor: "#d33",
             confirmButtonText: "Si, eliminalo!"
-          }).then( result => {
+        }).then(result => {
             if (result.isConfirmed) {
                 remove(id);
-                setProducts( products.filter(product => product.id != id) );
+                setProducts(products.filter(product => product.id != id));
                 Swal.fire({
                     title: "Eliminado con exito!",
                     text: "Producto eliminado con exito",
                     icon: "success"
                 });
             }
-          });
+        });
     }
 
-    return <div className='container my-4'>
-        <h2>{title}</h2>
+    return <div className='logo-pattern-bg'>
+        <h1 align="center">
+            <span className="title-background">{title} <img src="https://skillicons.dev/icons?i=react" width="80" /></span>
+        </h1>
         <div className='row'>
-            <div className='col'>
-                <ProductForm handlerAdd={handlerAddProduct} productSelected={productSelected} />
+            <div className='col-md-4 container'>
+                <div className="w-auto mx-auto">
+                    <ProductForm handlerAdd={handlerAddProduct} productSelected={productSelected} />
+                </div>
             </div>
-            <div className='col'>
-                {
-                    (products.length > 0) ?
-                        <ProductTable 
-                            products={products}
-                            handlerProductSelected={handlerProductSelected}
-                            handlerRemoveProduct={handlerRemoveProduct} /> 
-                        :
-                        <div className="alert alert-warning">
-                            No hay productos en el sistema!
-                        </div>
-                }
+            <div className='col-md-8'>
+                <div className="product-table-wrapper">
+                    {
+                        (products.length > 0) ? (
+                            <ProductTable
+                                products={products}
+                                handlerProductSelected={handlerProductSelected}
+                                handlerRemoveProduct={handlerRemoveProduct}
+                            />) :
+                            (
+                                <div className="alert alert-warning">
+                                    No hay productos en el sistema!
+                                    <img src={imagen} alt="Dificultades técnicas" width="500" />
+                                </div>
+                            )
+                    }
+                </div>
             </div>
+
         </div>
     </div>
 }

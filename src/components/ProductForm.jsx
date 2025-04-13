@@ -8,7 +8,7 @@ const initialDataForm = {   //valores por defecto
     price: ''
 }
 
-export const ProductForm = ({handlerAdd, productSelected}) => {
+export const ProductForm = ({ handlerAdd, productSelected }) => {
 
     const [form, setForm] = useState(initialDataForm);
 
@@ -28,26 +28,28 @@ export const ProductForm = ({handlerAdd, productSelected}) => {
         handlerAdd(form);
         setForm(initialDataForm);
     }}>
+
         <div>
+            <h2><span className="title-background">Formulario</span></h2>
             <input placeholder="Name"
                 className="form-control my-3 w-75"
                 name="name"
                 value={name}
-                onChange={(event) => setForm({...form, name: event.target.value})}/>
+                onChange={(event) => setForm({ ...form, name: event.target.value })} />
         </div>
         <div>
             <input placeholder="Description"
                 className="form-control my-3 w-75"
                 name="description"
                 value={description}
-                onChange={(event) => setForm({ ...form, description: event.target.value})}/>
+                onChange={(event) => setForm({ ...form, description: event.target.value })} />
         </div>
         <div>
             <input placeholder="Price"
                 className="form-control my-3 w-75"
                 name="price"
                 value={price}
-                onChange={(event) => setForm({ ...form, price: event.target.value})}/>
+                onChange={(event) => setForm({ ...form, price: event.target.value })} />
         </div>
         <div>
             <button className="btn btn-primary" type="submit">
