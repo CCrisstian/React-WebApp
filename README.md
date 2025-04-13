@@ -30,7 +30,6 @@ Proyecto: [Backend API RESTful con Java + Spring Boot](https://github.com/CCriss
 ![image](https://github.com/user-attachments/assets/a466dffe-0d40-4d5e-bdcd-bcdda05c1b57)
 ![image](https://github.com/user-attachments/assets/5e99facb-7ef9-4e16-bec8-d8126b955235)
 
-
 <h1 align="center">Jerarquía de Componentes dentro del Proyecto</h1>
 <p>Este proyecto <b>Frontend</b> en <b>React</b> sigue una estructura clara basada en componentes y servicios, separando la lógica de negocio de la interfaz visual.</p>
 
