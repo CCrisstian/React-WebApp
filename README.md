@@ -16,8 +16,6 @@
 
 <img src="https://skillicons.dev/icons?i=nodejs&perline=14" /> **Node.Js**: Es un entorno de ejecución de JavaScript ***del lado del servidor***. Permite ***construir aplicaciones web escalables y manejar operaciones de backend***, como **Bases de Datos**, **autenticación** y **lógica de negocio**.
 
-- Esto inicia el servidor local y proporciona una URL (generalmente **http://localhost:5173/**) donde ver la aplicación corriendo. / También es el comando para ejecutar el proyecto desde un editor de código.
-
 <h2><ins>Imagenes del Proyecto</ins></h2>
 <h3><ins>Sin Conexión al Backend</ins></h3>
 
@@ -27,6 +25,13 @@
 
 Proyecto: [Backend API RESTful con Java + Spring Boot](https://github.com/CCrisstian/Java_SpringBoot_API-RESTful)
 ![image](https://github.com/user-attachments/assets/cd5e8048-8330-4447-89d8-4cf3b761bd8c)
+
+Ejecutando en la terminal del editor de codigo (**VS Code**) el comando
+```jsx
+npm run dev
+```
+- Esto inicia el servidor local y proporciona una URL (generalmente **http://localhost:5173/**) donde ver la aplicación corriendo.
+
 ![image](https://github.com/user-attachments/assets/a466dffe-0d40-4d5e-bdcd-bcdda05c1b57)
 ![image](https://github.com/user-attachments/assets/5e99facb-7ef9-4e16-bec8-d8126b955235)
 
