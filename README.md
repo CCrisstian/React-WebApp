@@ -17,11 +17,11 @@
 <img src="https://skillicons.dev/icons?i=nodejs&perline=14" /> **Node.Js**: Es un entorno de ejecución de JavaScript ***del lado del servidor***. Permite ***construir aplicaciones web escalables y manejar operaciones de backend***, como **Bases de Datos**, **autenticación** y **lógica de negocio**.
 
 <h2><ins>Imagenes del Proyecto</ins></h2>
-<h3><ins>Sin Conexión al Backend</ins></h3>
+<h3>Sin Conexión al Backend</h3>
 
 ![SinConexiónBackend](https://github.com/user-attachments/assets/d6d28ca2-b840-460c-9f96-bd2565541fa0)
 
-<h3><ins>Activando el Backend</ins></h3>
+<h3>Activando el Backend</h3>
 
 Proyecto: [Backend API RESTful con Java + Spring Boot](https://github.com/CCrisstian/Java_SpringBoot_API-RESTful)
 ![image](https://github.com/user-attachments/assets/cd5e8048-8330-4447-89d8-4cf3b761bd8c)
